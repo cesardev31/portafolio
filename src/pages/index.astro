@@ -1,11 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Badge from "../components/Badge.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 import SocialPill from "../components/SocialPill.astro";
 import Experience from "../components/Experience.astro";
 import LinkenIn from "../components/icons/LinkenIn.astro";
 import GitHub from "../components/icons/GitHub.astro";
 import Mail from "../components/icons/Mail.astro";
+import ExperienceIcon from "../components/icons/ExperienceIcon.astro";
 ---
 
 <Layout
@@ -13,8 +15,8 @@ import Mail from "../components/icons/Mail.astro";
   description="Desarrollador web Especializado en desarrollo FullStack y multiplataforma"
 >
   <main>
-    <section class="w-full lg:w-[740px] mx-auto py-44">
-      <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
+    <SectionContainer  class="py-44 pb-34">
+      <h1 class="text-white text-2xl  lg:text-5xl font-bold flex flex-row gap-x-4 pb-4">
         Hey, soy Cesar Pereira <a
           href="https://www.linkedin.com/in/cesar-andres-pereira-bernal-51b801286/"
           class="flex justify-center items-center"
@@ -41,14 +43,19 @@ import Mail from "../components/icons/Mail.astro";
           <GitHub class="size-6" />
           GitHub
         </SocialPill>
-        <SocialPill href="https://github.com/cesardev31">
-          <Mail class="size-6" />
+        <SocialPill href="mailto:cesarandresdev@gmail.com">
+          <Mail class="size-6" /> 
           cesarandresdev@gmail.com
         </SocialPill>
       </nav>
-    </section>
-    <section>
+    </SectionContainer>
+
+    <SectionContainer id="experiencia">
+      <h2 class="text-4xl font-semibold mb-6 flex gap-x-3 items-center">
+        <ExperienceIcon class="size-8" />
+        Experiencia Laboral
+      </h2>
       <Experience />
-    </section>
+    </SectionContainer>
   </main>
 </Layout>
