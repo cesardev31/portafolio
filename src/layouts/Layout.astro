@@ -16,12 +16,15 @@ const { description, title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/icon.webp" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body >
-	<div class="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
+  <body>
+    <div
+      class="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"
+    >
+    </div>
     <Header />
     <slot />
     <Footer />
@@ -40,11 +43,36 @@ const { description, title } = Astro.props;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-
   }
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
+    }
+  }
+
+  #navbar {
+    display: none; /* Oculta el menú por defecto */
+    flex-direction: column; /* Asegura que los enlaces se desplieguen verticalmente */
+    gap: 0.5rem; /* Espaciado entre enlaces */
+    align-items: flex-end;
+    transition: all 0.3s ease; /* Transición suave para el despliegue */
+  }
+
+  #navbar.active {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .container-items{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  @media (min-width: 768px) {
+    #navbar {
+      display: flex; /* Asegura que el menú sea visible en pantallas medianas y grandes */
+      flex-direction: row; /* Orientación horizontal para enlaces */
     }
   }
 </style>
